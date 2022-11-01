@@ -1,0 +1,11 @@
+<h1>Editing Food</h1>
+<div class="jumbotron">
+  <h1 class="display-4"><%= @food.name %></h1>
+  <p class="lead"><%= @food.food_type %>  | <%= @food.weight %> kg </p>
+  <hr class="my-4">
+<br>
+
+<%= render 'form', food: @food %>
+<br>
+<%= link_to 'Show', @food, class:"btn btn-secondary" %>
+<%= link_to 'Back', foods_path, class:"btn btn-secondary" %>

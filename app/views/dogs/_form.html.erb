@@ -1,0 +1,51 @@
+<%= form_with(model: dog) do |form| %>
+  <% if dog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dog.errors.count, "error") %> prohibited this dog from being saved:</h2>
+
+      <ul>
+        <% dog.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%=  form.label "Profile picture" %>
+    <br>
+    <%= form.file_field :image %>
+  </div>
+
+  <div class="field form-group">
+    <% form.label :name %>
+    <%= form.text_field :name,class:"form-control",placeholder:"Name" %>
+  </div>
+  <div class="field form-group">
+    <% form.label :weight %>
+    <%= form.number_field :weight,class:"form-control",placeholder:"Weight" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :birthdate %>
+    <%= form.date_select :birthdate,class:"form-control" %>
+  </div>
+
+  <hr>
+
+  <%= form.fields_for :dog_foods, dog.all_dog_foods do |dog_food_fields| %>
+
+      <%= dog_food_fields.object.food.name%>
+    <%= dog_food_fields.check_box :_destroy, {checked:  dog_food_fields.object.persisted?}, '0', '1' %>
+      <%= dog_food_fields.hidden_field :food_id %>
+    <br>
+    <br>
+    <% end %>
+  <hr>
+
+
+    <div class="actions">
+    <%= form.submit class:'btn btn-secondary'%>
+  </div>
+<% end %>

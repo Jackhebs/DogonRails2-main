@@ -1,0 +1,35 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= @dog.name %></h1>
+  <br>
+  <div style="width:300px;height:auto">
+    <% if @dog.image.attached? %>
+    <%= link_to image_tag(@dog.image, style: 'width:100%' ), @dog.image, style: 'width:100%' %>
+    <% else %>
+      <%= image_tag("logos/dog--v5.png", width: '70px') %>
+      <% end %>
+  </div>
+  <br>
+  <br>
+  <p class="lead"> Birthdate: <%= @dog.birthdate.to_date %>
+    <br>
+     Weight: <%= @dog.weight %> kg </p>
+  <hr class="my-4">
+  <p>Some Information HERE</p>
+
+  <table>
+    <thead>
+    </thead>
+    <tbody>
+    <% @dog.dog_foods.each do |dog_food| %>
+      <tr>
+        <td><%= dog_food.food.name %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <br>
+  <p class="lead">
+    <%= link_to 'Edit', edit_dog_path(@dog), class:"btn btn-secondary"%>
+    <%= link_to 'Back', dogs_path, class:"btn btn-secondary"%>
+  </p>
+</div>

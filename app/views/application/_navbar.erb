@@ -1,0 +1,31 @@
+<nav class="navbar">
+  <div class="brand-title">Dog on Rails</div>
+  <a class="toggle-button" onclick="buttonClicked()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </a>
+  <div class="navbar-links">
+    <ul>
+      <li>
+        <%= link_to 'Home',home_path, class:"nav-link" %>
+      </li>
+
+      <li>
+        <%= link_to 'About',about_path, class:"nav-link" %>
+      </li>
+
+      <li>
+        <%= link_to 'Dogs',dogs_path, class:"nav-link" %>
+      </li>
+
+      <li>
+      <%= link_to 'Foods',foods_path, class:"nav-link" %>
+      </li>
+
+      <li>
+        <%= link_to 'DogFood',dog_foods_path, class:"nav-link" %>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+brit_care:
+  name: britcare
+  food_type: granule
+  weight: 12
+
+food_jogies:
+  name: jogies
+  food_type: granule
+  weight: 44

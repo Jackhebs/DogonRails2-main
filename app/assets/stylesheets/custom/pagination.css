@@ -1,0 +1,42 @@
+.pear_pagination {
+  text-align: left;
+  padding: 0.3em;
+  cursor: default;
+}
+.pear_pagination a,
+.pear_pagination span {
+  padding: 0.3em 0.4em;
+  color: gray;
+}
+.pear_pagination .disabled {
+  color: #000000;
+}
+.pear_pagination .current {
+  font-style: normal;
+  font-weight: bold;
+  background-color: #efeded;
+  display: inline-block;
+  width: 1.4em;
+  height: 1.4em;
+  line-height: 1.5;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
+  border-radius: 1em;
+  text-shadow: rgba(82, 81, 81, 0.8) 1px 1px 1px;
+}
+.pear_pagination a {
+  text-decoration: #eeeeee;
+}
+.pear_pagination a:hover,
+.pear_pagination a:focus {
+  text-decoration: underline;
+}
+.pear_pagination ul{
+  display: flex;
+  background: #efeded;
+  padding: 8px;
+  border-radius: 50px;
+}
+body{
+  background-color: #efeded;
+}

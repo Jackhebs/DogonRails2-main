@@ -1,0 +1,44 @@
+
+<h1>Dogs</h1>
+<%= form_tag(dogs_path, method: :get) do %>
+ Name <%= text_field_tag(:search, params[:search]) %>
+  <%= submit_tag("Search", class: "btn btn-info") %>
+<% end %>
+
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th>Name</th>
+      <th>Pic</th>
+      <th>ID</th>
+      <th>Weight</th>
+      <th>Birthdate</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dogs.each do |dog| %>
+      <tr <%= dog.valid? ? "" : "style=\"background-color:red\"".html_safe %> >
+        <td><%= dog.name %></td>
+        <% if dog.image.present? && dog.image.attached? %>
+          <td><%= image_tag(dog.image, width: '60px') %></td>
+        <% else %>
+          <td><%= image_tag("logos/dog--v5.png", width: '40px') %></td>
+        <% end %>
+        <td><%= dog.id %></td>
+        <td><%= dog.weight %></td>
+        <td><%= dog.birthdate.to_date %></td>
+        <td><%= link_to 'Show', dog,  class:"btn btn-outline-dark" %></td>
+        <td><%= link_to 'Edit', edit_dog_path(dog), class:"btn btn-outline-dark" %></td>
+        <td><%= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Are you sure?' },  class:"btn btn-outline-dark" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="pear_pagination">
+  <%= will_paginate @dogs, :page_links => "", :link_separator => '', :previous_label => "<<<", :next_label => ">>>", :class => 'pear_pagination' %>
+</div>
+<br>
+<br>
+<%= link_to 'New Dog', new_dog_path,class:"btn btn-secondary"%>

@@ -1,0 +1,22 @@
+<p id="notice"><%#= notice %></p>
+
+
+<div class="jumbotron">
+  <h1 class="display-4"><%= @dog_food.dog.name %></h1>
+  <p class="lead"><%= @dog_food.food.name %>
+  <hr class="my-4">
+
+
+<p>
+  <strong>Dog:</strong>
+  <%= @dog_food.dog.name %>
+</p>
+
+<p>
+  <strong>Food:</strong>
+  <%= @dog_food.food.name %>
+</p>
+
+<%= link_to 'Edit', edit_dog_food_path(@dog_food), class:"btn btn-secondary"%>
+<%= link_to 'Back', dog_foods_path, class:"btn btn-secondary"%>
+</div>

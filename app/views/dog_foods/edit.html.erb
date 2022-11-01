@@ -1,0 +1,14 @@
+<h1>Editing Dog Food</h1>
+
+<div class="jumbotron">
+<h1 class="display-4"><%= @dog_food.dog.name %></h1>
+<p class="lead"><%= @dog_food.food.name %>
+<hr class="my-4">
+<br>
+
+<%= render 'form', dog_food: @dog_food %>
+<br>
+<%= link_to 'Show', @dog_food, class:"btn btn-secondary" %>
+<br>
+  <br>
+<%= link_to 'Back', dog_foods_path, class:"btn btn-secondary" %>

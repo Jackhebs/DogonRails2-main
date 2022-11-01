@@ -1,0 +1,16 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+dog1:
+  name: dolar
+  weight: 37
+  birthdate: 2021-06-21 12:27:22
+
+dog2:
+  name: Mia
+  weight: 24
+  birthdate: 2020-07-20 12:22:22
+
+dog3:
+  name: chuj
+  weight: 33
+  birthdate: 2020-07-20 12:22:22
